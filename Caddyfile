@@ -1,0 +1,14 @@
+{
+	auto_https off
+}
+
+:3000 {
+	handle_path /app1* {
+		reverse_proxy frontend1:3001
+	}
+
+	handle /app2* {
+		request_header X-Remix-Basename "/app2"
+		reverse_proxy frontend2:3002
+	}
+}
