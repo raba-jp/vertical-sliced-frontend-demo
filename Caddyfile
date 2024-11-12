@@ -8,7 +8,6 @@
 	}
 
 	handle /app2* {
-		request_header X-Remix-Basename "/app2"
 		reverse_proxy frontend2:3002
 	}
 }
